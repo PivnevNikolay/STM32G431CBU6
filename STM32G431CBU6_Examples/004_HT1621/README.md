@@ -1,5 +1,3 @@
-[![Foo](https://img.shields.io/badge/ПОДПИСАТЬСЯ-Soldering%20iron.%20Изучаем%20Stm32%20вместе.-brightgreen.svg?style=social&logo=vk&color=blue)](https://vk.com/solderingiron.stm32)   
-[![Foo](https://img.shields.io/badge/ПОДПИСАТЬСЯ-Solderingironspb-brightgreen.svg?style=social&logo=youtube&color=blue)](https://www.youtube.com/@Solderingironspb/videos)  
 
 * [Введение](#Введение)  
 * [Выводы LCD 1621 для подключения к STM32](#Выводы-LCD-1621-для-подключения-к-STM32)  
