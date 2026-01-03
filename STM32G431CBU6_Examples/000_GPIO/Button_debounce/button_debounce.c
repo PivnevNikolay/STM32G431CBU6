@@ -1,4 +1,25 @@
-
+/**-------------------------------------------------------------------
+ \date  03.01.2026
+ *
+ *   STM32G431CBU6
+ *   ------------
+ *  |            |
+ *  |            |
+ *  |            |
+ *  |        PC.6| ---->  LED
+ *  |            |
+ *  |       PC.13| <----  Button
+ *  |            |
+ *  |      +3.3V |
+ *  |        GND |
+ *
+ * 
+ *
+ *
+ *\ authors        ScuratovaAnna
+ *\ сode debugging PivnevNikolay
+ */
+ 
 #include "stm32g4xx.h"
 #include "stdbool.h"
 
@@ -10,14 +31,14 @@ __IO bool led_state = 0;
 #define GPIO_Pin_3 ((uint16_t)0x0008)
 #define GPIO_Pin_4 ((uint16_t)0x0010)
 #define GPIO_Pin_5 ((uint16_t)0x0020)
-#define GPIO_Pin_6 ((uint16_t)0x0040)
+#define GPIO_Pin_6 ((uint16_t)0x0040) //Led
 #define GPIO_Pin_7 ((uint16_t)0x0080)
 #define GPIO_Pin_8 ((uint16_t)0x0100)
 #define GPIO_Pin_9 ((uint16_t)0x0200)
 #define GPIO_Pin_10 ((uint16_t)0x0400)
 #define GPIO_Pin_11 ((uint16_t)0x0800)
 #define GPIO_Pin_12 ((uint16_t)0x1000)
-#define GPIO_Pin_13 ((uint16_t)0x2000)
+#define GPIO_Pin_13 ((uint16_t)0x2000)//Button
 #define GPIO_Pin_14 ((uint16_t)0x4000)
 #define GPIO_Pin_15 ((uint16_t)0x8000)
 
@@ -49,12 +70,12 @@ void PORTC_6_INIT_Led(void) {
   MODIFY_REG(GPIOC->MODER, GPIO_MODER_MODE6, General_purpose_output_mode << GPIO_MODER_MODE6_Pos); // Настройка GPIOC пин 6 на выход (output mode)
   MODIFY_REG(GPIOC->OTYPER, GPIO_OTYPER_OT6, Output_push_pull << GPIO_OTYPER_OT6_Pos);             // Настройка GPIOC пин 6 в режим Push-Pull
   MODIFY_REG(GPIOC->OSPEEDR, GPIO_OSPEEDR_OSPEED6, High_speed << GPIO_OSPEEDR_OSPEED6_Pos);        // Настройка GPIOC пин 6 в режим High_speed
-  MODIFY_REG(GPIOC->PUPDR, GPIO_PUPDR_PUPD6, No_pull_up_No_pull_down << GPIO_PUPDR_PUPD6_Pos);     // Настройка GPIOC пин 6 в режим High_speed
+  MODIFY_REG(GPIOC->PUPDR, GPIO_PUPDR_PUPD6, No_pull_up_No_pull_down << GPIO_PUPDR_PUPD6_Pos);     // Настройка GPIOC пин 6 в режим No_pull_up_No_pull_down
 }
 
 void PORTC_13_INIT_Button(void) {
   MODIFY_REG(GPIOC->MODER, GPIO_MODER_MODE13, Input_mode << GPIO_MODER_MODE13_Pos);// Настройка GPIOC пин 13 на выход (Input_mode)
-  MODIFY_REG(GPIOC->PUPDR, GPIO_PUPDR_PUPD13, Pull_down << GPIO_PUPDR_PUPD13_Pos); // Настройка GPIOC пин 13 в режим No_pull_up_No_pull_down
+  MODIFY_REG(GPIOC->PUPDR, GPIO_PUPDR_PUPD13, Pull_down << GPIO_PUPDR_PUPD13_Pos); // Настройка GPIOC пин 13 в режим Pull_down
 }
 
 uint8_t button_debounce(void) {
@@ -87,3 +108,5 @@ int main(void) {
     }
   }
 }
+
+/*************************** End of file ****************************/
