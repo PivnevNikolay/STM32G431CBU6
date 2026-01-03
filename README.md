@@ -17,7 +17,7 @@ with 213 DMIPS, MPU, DSP instructions.
 
 ### Board
 ---
-![alt-текст](https://github.com/PivnevNikolay/Segger_Embedded_Studio_for_STM32/blob/main/02_STM32G431CBU6/photo/000.jpg "STM32G431CBU6")  
+![alt-текст](https://github.com/PivnevNikolay/STM32G431CBU6/blob/main/Images/000.jpg "STM32G431CBU6")  
 отладочная плата [WeAct STM32G431CBU6 Core Board](https://aliexpress.ru/item/1005007079255256.html?spm=a2g2w.favourites.mywishlist.2.cb1b4aa6QelHLG&sku_id=12000039330935428)  
 [Ссылка](https://github.com/WeActStudio/WeActStudio.STM32G431CoreBoard.git) на репозиторий отладочной платы WeAct STM32G431CBU6 в github.
 
